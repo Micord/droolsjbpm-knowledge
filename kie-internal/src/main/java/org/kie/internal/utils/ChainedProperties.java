@@ -22,13 +22,16 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
+import java.io.Serializable;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Enumeration;
 import java.util.List;
 import java.util.Map;
+import java.util.Objects;
 import java.util.Properties;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.stream.Collectors;
 
 import org.slf4j.Logger;
@@ -61,14 +64,26 @@ public class ChainedProperties
     private List<Properties> props = new ArrayList<Properties>();
     private List<Properties> defaultProps = new ArrayList<Properties>();
 
+    private static final Map<SimpleKey,ChainedProperties> chainedPropertiesCache = new ConcurrentHashMap<>();
+
     public ChainedProperties() { }
 
     public static ChainedProperties getChainedProperties( ClassLoader classLoader ) {
         return getChainedProperties( "properties.conf", classLoader );
     }
 
-    public static ChainedProperties getChainedProperties( String confFileName, ClassLoader classLoader ) {
-        return new ChainedProperties( confFileName, classLoader );
+    public static ChainedProperties getChainedProperties(String confFileName,
+                                                         ClassLoader classLoader) {
+        SimpleKey key = new SimpleKey(confFileName, classLoader);
+
+        if (chainedPropertiesCache.containsKey(key)) {
+            return chainedPropertiesCache.get(key);
+        }
+        else {
+            ChainedProperties chainedProperties = new ChainedProperties(confFileName, classLoader);
+            chainedPropertiesCache.put(key, chainedProperties);
+            return chainedProperties;
+        }
     }
 
     public ChainedProperties clone() {
@@ -237,6 +252,43 @@ public class ChainedProperties
             chain.add( properties );
         } catch ( IOException e ) {
             //throw new IllegalArgumentException( "Invalid URL to properties file '" + confURL.toExternalForm() + "'" );
+        }
+    }
+
+    private static class SimpleKey implements Serializable {
+
+        private final ClassLoader classLoader;
+        private final String confFileName;
+
+        public SimpleKey(String confFileName,
+                         ClassLoader classLoader) {
+            this.confFileName = confFileName;
+            this.classLoader = classLoader;
+        }
+
+        @Override
+        public boolean equals(Object o) {
+            if (this == o) {
+                return true;
+            }
+            if (o == null || getClass() != o.getClass()) {
+                return false;
+            }
+            SimpleKey simpleKey = (SimpleKey) o;
+            return classLoader.equals(simpleKey.classLoader) && confFileName.equals(
+                simpleKey.confFileName);
+        }
+
+        @Override
+        public int hashCode() {
+            return Objects.hash(classLoader, confFileName);
+        }
+
+        @Override
+        public String toString() {
+            return "SimpleKey{" + "classLoader=" + classLoader
+                   + ", confFileName='" + confFileName + '\''
+                   + '}';
         }
     }
 }
