@@ -15,21 +15,21 @@
  */
 package org.kie.api.pmml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="value")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class IntegerFieldOutput extends AbstractOutput<Integer> {
     private Integer value;
-    
+
     public IntegerFieldOutput() {
         super();
     }
 
-    
-    
+
+
     public IntegerFieldOutput(String correlationId, String name, String displayValue, Double weight, Integer value) {
         super(correlationId, name, displayValue, weight);
         this.value = value;

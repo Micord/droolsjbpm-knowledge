@@ -15,11 +15,11 @@
  */
 package org.kie.api.pmml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import org.kie.api.definition.type.Role;
 import org.kie.api.definition.type.Role.Type;
@@ -32,7 +32,7 @@ public class PMML4OutputField extends PMML4DataField {
     private String warning = "No warning";
     @XmlAttribute(name="target")
     private boolean target = false;
-    
+
     public String getWarning() {
         return warning;
     }
@@ -45,7 +45,7 @@ public class PMML4OutputField extends PMML4DataField {
     public void setTarget(boolean target) {
         this.target = target;
     }
-    
+
     @Override
     public int hashCode() {
         final int prime = 31;
@@ -54,7 +54,7 @@ public class PMML4OutputField extends PMML4DataField {
         result = prime * result + ((warning == null) ? 0 : warning.hashCode());
         return result;
     }
-    
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -79,7 +79,7 @@ public class PMML4OutputField extends PMML4DataField {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder bldr = new StringBuilder("PMML4OutputField - [");
@@ -89,5 +89,5 @@ public class PMML4OutputField extends PMML4DataField {
             .append("]");
         return bldr.toString();
     }
-    
+
 }

@@ -19,10 +19,10 @@ package org.kie.internal.builder.help;
 import java.io.IOException;
 import java.util.Map;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-
 import com.sun.tools.xjc.Options;
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+
 import org.kie.api.KieBase;
 import org.kie.api.io.Resource;
 import org.kie.internal.builder.KnowledgeBuilder;

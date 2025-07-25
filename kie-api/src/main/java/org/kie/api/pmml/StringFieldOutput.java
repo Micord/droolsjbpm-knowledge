@@ -15,9 +15,9 @@
  */
 package org.kie.api.pmml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="value")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -27,7 +27,7 @@ public class StringFieldOutput extends AbstractOutput<String> {
     public StringFieldOutput() {
         super();
     }
-    
+
     public StringFieldOutput(String correlationId, String name, String displayValue, Double weight, String value) {
         super(correlationId, name, displayValue, weight);
         this.value = value;
@@ -95,5 +95,5 @@ public class StringFieldOutput extends AbstractOutput<String> {
                 + getSegmentationId() + ", segmentId=" + getSegmentId() + ", name=" + getName()
                 + ", displayValue=" + getDisplayValue() + ", value=" + value + ", weight=" + weight + "]";
     }
-    
+
 }

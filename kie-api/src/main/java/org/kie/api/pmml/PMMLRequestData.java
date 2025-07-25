@@ -22,17 +22,17 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElementWrapper;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElementWrapper;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 /**
  * This class provides a vanilla mechanism for sending data to
  * the rule engine, for use in having a PMML model applied against it
- * 
+ *
  */
 
 @XmlType(name="PMMLRequestData")
@@ -51,7 +51,7 @@ public class PMMLRequestData {
     public PMMLRequestData() {
         this.requestParams = new ArrayList<>();
     }
-    
+
     public PMMLRequestData(String correlationId) {
         this.correlationId = correlationId;
         this.requestParams = new ArrayList<>();
@@ -97,7 +97,7 @@ public class PMMLRequestData {
         ParameterInfo parameter = new ParameterInfo(this.correlationId, paramName, clazz, value);
         return this.addRequestParam(parameter);
     }
-    
+
     public String getCorrelationId() {
         return correlationId;
     }
@@ -109,16 +109,16 @@ public class PMMLRequestData {
     public void setModelName(String modelName) {
         this.modelName = modelName;
     }
-    
+
     public String getSource() {
         return this.source;
     }
-    
+
     public void setSource(String source) {
         this.source = source;
     }
-    
-    
+
+
     @Override
     public int hashCode() {
         final int prime = 31;

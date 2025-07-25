@@ -15,16 +15,16 @@
  */
 package org.kie.api.pmml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="value")
 @XmlAccessorType(XmlAccessType.FIELD)
 public class DoubleFieldOutput extends AbstractOutput<Double> {
     private Double value;
-    
-    
+
+
     public DoubleFieldOutput() {
         super();
     }
@@ -103,6 +103,6 @@ public class DoubleFieldOutput extends AbstractOutput<Double> {
                 + getSegmentationId() + ", segmentId=" + getSegmentId() + ", name=" + getName()
                 + ", displayValue=" + getDisplayValue() + ", value=" + value + ", weight=" + weight + "]";
     }
-    
-    
+
+
 }

@@ -15,11 +15,11 @@
  */
 package org.kie.api.pmml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="pmmlOutput")
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -36,11 +36,11 @@ public abstract class AbstractOutput<T> implements PMML4Output<T> {
     private String displayValue;
     @XmlElement(name="weight")
     protected Double weight;
-    
+
     public AbstractOutput() {
-        
+
     }
-    
+
     public AbstractOutput(String correlationId, String name) {
         super();
         this.correlationId = correlationId;
@@ -77,11 +77,11 @@ public abstract class AbstractOutput<T> implements PMML4Output<T> {
     public String getCorrelationId() {
         return correlationId;
     }
-    
+
     public void setCorrelationId(String correlationId) {
         this.correlationId = correlationId;
     }
-    
+
     public String getSegmentationId() {
         return segmentationId;
     }
@@ -101,20 +101,20 @@ public abstract class AbstractOutput<T> implements PMML4Output<T> {
     public String getName() {
         return name;
     }
-    
+
     public void setName(String name) {
         this.name = name;
     }
-    
+
     public String getDisplayValue() {
         return displayValue;
     }
-    
+
     public void setDisplayValue(String displayValue) {
         this.displayValue = displayValue;
     }
-    
-    
+
+
     public Double getWeight() {
         return weight;
     }

@@ -15,10 +15,10 @@
  */
 package org.kie.api.pmml;
 
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAttribute;
-import javax.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlAccessType;
+import jakarta.xml.bind.annotation.XmlAccessorType;
+import jakarta.xml.bind.annotation.XmlAttribute;
+import jakarta.xml.bind.annotation.XmlRootElement;
 
 import org.kie.api.definition.type.Role;
 import org.kie.api.definition.type.Role.Type;
@@ -117,7 +117,7 @@ public class PMML4DataField extends PMML4AbstractField {
         }
         return true;
     }
-    
+
     @Override
     public String toString() {
         StringBuilder bldr = new StringBuilder("PMML4DataField - [");

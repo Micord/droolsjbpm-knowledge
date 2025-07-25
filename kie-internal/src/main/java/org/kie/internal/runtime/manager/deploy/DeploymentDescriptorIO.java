@@ -21,14 +21,17 @@ import java.io.StringWriter;
 import java.net.URL;
 
 import javax.xml.XMLConstants;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
+
 import javax.xml.validation.Schema;
 import javax.xml.validation.SchemaFactory;
 
+import jakarta.xml.bind.JAXBContext;
+import jakarta.xml.bind.JAXBException;
+import jakarta.xml.bind.Marshaller;
+import jakarta.xml.bind.Unmarshaller;
+
 import org.kie.internal.runtime.conf.DeploymentDescriptor;
+
 import org.xml.sax.SAXException;
 
 /**
@@ -43,7 +46,7 @@ public class DeploymentDescriptorIO {
     private static Schema schema = null;
 
     /**
-     * Reads XML data from given input stream and produces valid instance of 
+     * Reads XML data from given input stream and produces valid instance of
      * <code>DeploymentDescriptor</code>
      * @param inputStream input stream that comes with xml data of the descriptor
      * @return instance of the descriptor after deserialization
