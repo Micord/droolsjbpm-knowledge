@@ -6,7 +6,7 @@
   <parent>
     <groupId>org.kie</groupId>
     <artifactId>kie-parent</artifactId>
-    <version>7.59.0.Final</version>
+    <version>7.74.1.Final</version>
     <!-- relativePath causes out-of-date problems on hudson secondary nodes -->
     <!--<relativePath>../droolsjbpm-build-bootstrap/pom.xml</relativePath>-->
   </parent>
@@ -14,7 +14,7 @@
   <artifactId>kie-api-parent</artifactId>
   <packaging>pom</packaging>
 
-  <version>7.59.0.Final-Micord-1</version>
+  <version>7.74.1.Final-Micord-1</version>
 
   <name>KIE :: API Parent</name>
   <description>The common API for KIE (Drools, jBPM and OptaPlanner)</description>
