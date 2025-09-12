@@ -24,7 +24,7 @@
     <checkstyle.logViolationsToConsole>true</checkstyle.logViolationsToConsole>
     <version.org.eclipse.jetty>12.0.16</version.org.eclipse.jetty>
     <version.org.eclipse.persistence>4.0.7</version.org.eclipse.persistence>
-    <kie-soup.version>7.74.1.Final-Micord.1</kie-soup.version>
+    <kie-soup.version>7.74.1.Final-Micord.2</kie-soup.version>
     <version.com.thoughtworks.xstream>1.4.21</version.com.thoughtworks.xstream>
     <version.org.jboss.logging-4ee7>3.6.1.Final</version.org.jboss.logging-4ee7>
     <version.jakarta.jws-api>4.0.2</version.jakarta.jws-api>
